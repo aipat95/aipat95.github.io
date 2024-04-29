@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>RPS Game</title>
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant:ital,wght@0,300..700;1,300..700&family=Dancing+Script:wght@400..700&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Inter:wght@100..900&family=Orbitron:wght@400..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+
+	<style>
+
+	.hline{
+		background-color: #D4070F;
+		padding: 10px;
+		width: 100%;
+	}
+
+	.titillium-web-regular {
+  		font-family: "Titillium Web", sans-serif;
+  		font-weight: 400;
+  		font-style: normal;
+	}
+
+	.dancing-script {
+  		font-family: "Dancing Script", cursive;
+  		font-optical-sizing: auto;
+  		font-weight: <weight>;
+  		font-style: normal;
+	}
+
+
+
+	body{
+		background-image: url('cyberpunk.png');
+  		background-repeat: no-repeat;
+  		background-attachment: fixed; 
+ 		background-size: cover;
+		font-family: Ariel;
+		margin:0;
+		display: flex;
+		flex-direction: column;
+		align-items:center;
+		background-color: #0066E7;
+
+		font-size: 30px;
+		color: whitesmoke;
+		font-family: "Titillium Web", sans-serif;
+  		font-weight: 400;
+  		font-style: normal;
+	}
+
+	.bubble{
+		border-radius: 25px;
+		background-color: transparent;
+		border: 5px solid #fff;
+		padding: 0px;
+		box-shadow: 0 0 .2rem #fff,
+            0 0 .2rem #fff,
+            0 0 2rem #bc13fe,
+            0 0 0.8rem #bc13fe,
+            0 0 2.8rem #bc13fe,
+            inset 0 0 1.3rem #bc13fe;
+        height: 350px;
+	}
+
+
+	.center{
+		display: grid;
+		flex-wrap: wrap;
+		justify-content: center;
+		grid-gap: 50px;
+		grid-template-columns: 1fr 2fr;
+		grid-template-rows: 1fr;
+
+	}
+
+	.choices{
+		margin-bottom: 30px;
+		display: flex;
+		grid-gap: 20px;
+	}
+
+	.choices button{
+		
+		cursor: pointer;
+		transform: background-color 0.5s ease;
+		background-image: linear-gradient(to right, #072851, #bc13fe, #d88aff);
+		margin-top: -10px;
+
+	}
+
+	.computerChoices button{
+		min-width: 130px;
+		min-height: 160px;
+		/*margin: 0 20px;*/
+		border-radius: 0;
+      	background-color: transparent;
+      	border: 5px solid transparent;
+      	margin-top: -30 px;
+	}
+
+	.choices button:hover{
+		background-image: linear-gradient(to right, #24d0e7, #3e16a5 , #8b2eff);
+    	box-shadow: 0 4px 15px 0 rgba(236, 116, 149, 0.75);
+	}
+	
+
+	#playerDisplay, #computerDisplay{
+		color: ghostwhite;
+		text-shadow: 2px 2px plum;
+	}
+
+	p{
+		color: ghostwhite;
+		text-shadow: 2px 2px darkcyan;
+		margin-top:0px;
+		margin-left: 20px;
+
+	}
+
+	#resultDisplay{
+		font-size: 100%;
+		margin: 20px 30px;
+		min-height: 60px;
+		margin-top: -10px;
+		text-align: center;
+	}
+
+	.greenText{
+		color: palevioletred;
+	}
+
+	.redText{
+		color: skyblue;
+		font-family: "Dancing Script", cursive;
+  		font-optical-sizing: auto;
+  		font-weight: <weight>;
+  		font-style: normal;
+  		font-size: 150%;
+	}
+
+	.chosen{
+		background-color: #0c32fb;
+	}
+
+
+	</style>
+
+</head>
+<body>
+
+		<br>
+		<div class="center">
+			<div class="middle" id="robotui">
+				<img src="robothappy.png">
+			</div>
+			<div class="bubble">
+				<p>COMPUTER :</p>
+				<div id="resultDisplay">Let's play ROCK PAPER SCISSORS!</div>
+				<div class="computerChoices" id="chosen">
+					<button disabled id="rock-com"><img src="rockCD.png"></button>
+					<button disabled id="paper-com"><img src="paperCD.png"></button>
+					<button disabled id="scissors-com"><img src="scissorsCD.png"></button>
+				</div>
+			</div>
+			
+		</div>
+		<br>
+		<div id="playerDisplay">PLAYER</div><br>
+		<div class="choices">
+			<button onclick="playGame('rock')"><img src="rockW.png"></button>
+			<button onclick="playGame('paper')"><img src="paper-1.png"></button>
+			<button onclick="playGame('scissors')"><img src="scissorsW.png"></button>
+		</div>
+
+	<script src="index.js"></script>
+
+</body>
+</html>
